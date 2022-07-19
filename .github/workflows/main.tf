@@ -19,7 +19,7 @@ terraform {
 
   backend "remote" {
 
-    organization = "re-terraform"
+    organization = "Azure subscription 1"
 
 
     workspaces {
