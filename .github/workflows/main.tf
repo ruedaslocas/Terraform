@@ -19,7 +19,7 @@ terraform {
 
   backend "remote" {
 
-    organization = "DemosAzure"
+    organization = "re-terraform"
 
 
     workspaces {
