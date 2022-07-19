@@ -1,16 +1,53 @@
 # Recomendamos encarecidamente utilizar el bloque required_providers para establecer la
 # fuente y versión de Azure Provider que se está utilizando
 terraform {
+
   required_providers {
+
     azurerm = {
-      source = "hashicorp/azurerm"
+
+      version = "~> 2.30"
+
     }
+
+    random = {
+
+      source = "hashicorp/random"
+
+    }
+
+  }
+
+
+  backend "remote" {
+
+    organization = "DemosAzure"
+
+
+    workspaces {
+
+      name = "AzureAlex"
+
+    }
+
   }
 
 }
-#proveedor (azure, aws, gcp...)
+
+
+variable "prefix" {
+
+  default = "Minima-v2"
+
+}
+
+
 provider "azurerm" {
+
+  version = "~>2.30"
+
   features {}
+
 }
 
 #crear rg
